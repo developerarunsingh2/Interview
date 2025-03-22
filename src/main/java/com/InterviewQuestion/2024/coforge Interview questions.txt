@@ -1,0 +1,402 @@
+
+Cohesion & coupliing:
+
+Solid principles:
+
+12 factors of microservices:
+
+cnfr 
+
+design principles in microservices
+
+design principles in java
+
+program to find the whole number between string:
+String str = "abc4006f10";
+output =4006, 10, generic to all string
+
+solution:
+ Below is a simple Java program that demonstrates how you can achieve this using regular expressions:
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class WholeNumbersFromString {
+    public static void main(String[] args) {
+        String inputString = "The price of the product is $500. The quantity is 10.";
+
+        // Define the regular expression pattern to match integers
+        Pattern pattern = Pattern.compile("\\b\\d+\\b");
+
+        // Create a matcher object
+        Matcher matcher = pattern.matcher(inputString);
+
+        // Find and print all whole numbers in the input string
+        System.out.println("Whole numbers in the string:");
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+    }
+}
+
+
+
+Q: how to secure rest api?
+
+<dependencies>
+    <!-- Spring Security -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+
+    <!-- JWT -->
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>0.11.2</version>
+    </dependency>
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>0.11.2</version>
+        <scope>runtime</scope>
+    </dependency>
+</dependencies>
+
+
+Security Configuration:
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable()
+            .authorizeRequests()
+                .antMatchers("/api/public").permitAll()
+                .anyRequest().authenticated()
+            .and()
+            .addFilter(new JwtAuthenticationFilter(authenticationManager()))
+            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    }
+}
+
+
+JWT Token Generation and Validation:
+public class JwtUtils {
+
+    private static final String SECRET_KEY = "your_secret_key";
+    private static final long EXPIRATION_TIME = 864_000_000; // 10 days
+
+    public static String generateToken(String username) {
+        return Jwts.builder()
+                .setSubject(username)
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+                .signWith(SignatureAlgorithm.HS512, SECRET_KEY)
+                .compact();
+    }
+
+    public static String extractUsername(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(SECRET_KEY)
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+    }
+
+    public static boolean validateToken(String token) {
+        try {
+            Jwts.parserBuilder().setSigningKey(SECRET_KEY).build().parseClaimsJws(token);
+            return true;
+        } catch (JwtException | IllegalArgumentException e) {
+            return false;
+        }
+    }
+}
+
+
+Custom JWT Authentication Filter:
+
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    private final AuthenticationManager authenticationManager;
+
+    public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
+        try {
+            String token = extractToken(request);
+            if (token != null && JwtUtils.validateToken(token)) {
+                String username = JwtUtils.extractUsername(token);
+                Authentication authentication = new UsernamePasswordAuthenticationToken(username, null, new ArrayList<>());
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
+        } catch (Exception e) {
+            // Handle exceptions (e.g., log or send appropriate response)
+        }
+        filterChain.doFilter(request, response);
+    }
+
+    private String extractToken(HttpServletRequest request) {
+        String header = request.getHeader("Authorization");
+        if (header != null && header.startsWith("Bearer ")) {
+            return header.substring(7);
+        }
+        return null;
+    }
+}
+
+2. HTTPS Configuration
+Enable HTTPS in application.properties:
+
+server.port=8443
+server.ssl.key-store=classpath:keystore.jks
+server.ssl.key-store-password=your_keystore_password
+server.ssl.key-password=your_key_password
+
+
+server.port=8443
+server.ssl.key-store=classpath:keystore.jks
+server.ssl.key-store-password=your_keystore_password
+server.ssl.key-password=your_key_password
+
+
+
+
+how to secure your applcation
+
+implement singleton design pattern for multi threaded environment.
+
+
+public class ThreadSafeSingleton {
+
+    // Private volatile static instance variable
+    private static volatile ThreadSafeSingleton instance;
+
+    // Private constructor to prevent instantiation from outside the class
+    private ThreadSafeSingleton() {
+        // Initialization code, if needed
+    }
+
+    // Public method to provide access to the instance
+    public static ThreadSafeSingleton getInstance() {
+        // Double-checked locking
+        if (instance == null) {
+            synchronized (ThreadSafeSingleton.class) {
+                // Check again inside synchronized block
+                if (instance == null) {
+                    instance = new ThreadSafeSingleton();
+                }
+            }
+        }
+        return instance;
+    }
+
+    // Other methods, if any
+
+    public void someMethod() {
+        // Implementation of some method
+    }
+}
+
+
+difference between core spring and springboot
+
+Spring and Spring Boot are both frameworks within the Spring ecosystem, but they serve different purposes and have different characteristics.
+
+Spring Framework:
+
+Purpose: The Spring Framework is a comprehensive framework for Java application development. It provides a wide range of features and modules for building enterprise-level applications.
+Configuration: Spring applications are typically configured using XML files or Java-based configuration. Developers need to configure various aspects of the application, such as beans, dependencies, and aspects.
+Flexibility: The Spring Framework offers great flexibility but requires developers to make many decisions about the architecture and configuration of their applications.
+Spring Boot:
+
+Purpose: Spring Boot is built on top of the Spring Framework and is specifically designed to simplify the development of production-ready applications. It focuses on convention over configuration and allows developers to get started quickly with minimal setup.
+Configuration: Spring Boot uses sensible defaults and offers a "convention over configuration" approach. It aims to minimize the amount of boilerplate code and configuration that developers need to write. Configuration can be done through properties files, annotations, or application.yml files.
+Simplification: Spring Boot simplifies the development process by providing default configurations, embedded servers, and a set of pre-built templates for common tasks. It includes features like auto-configuration, which automatically configures application components based on the project's dependencies.
+In summary, while the Spring Framework provides a comprehensive set of tools and features for building enterprise applications with a high degree of flexibility, Spring Boot is a more opinionated framework that simplifies the development process by providing sensible defaults and reducing the amount of manual configuration required. Spring Boot is often preferred for microservices architectures and rapid development of smaller, standalone applications. It's worth noting that Spring Boot applications are still Spring applications, but with a set of conventions and defaults that make it easier to get started.
+
+
+what is stream api?
+
+
+
+
+The Stream API in Java is a powerful and expressive feature introduced in Java 8 to facilitate functional-style programming and make it easier to process collections of data. It allows you to perform operations on a sequence of elements, such as filtering, mapping, and reducing, in a concise and declarative manner. The Stream API is a part of the java.util.stream package.
+
+Here are some key concepts and features of the Stream API:
+
+Stream:
+
+A stream is a sequence of elements that can be processed in parallel or sequentially.
+Streams don't store elements; they provide a way to process elements from a source (e.g., a collection, an array, or an I/O channel).
+Functional Programming Style:
+
+The Stream API encourages a functional programming style by providing methods that operate on streams using lambda expressions.
+Operations on streams are often expressed using functional interfaces such as Predicate, Function, and Consumer.
+Intermediate and Terminal Operations:
+
+Intermediate Operations: These operations transform a stream into another stream, allowing you to perform operations like filtering, mapping, and sorting. Examples include filter(), map(), and sorted().
+Terminal Operations: These operations produce a result or a side effect and terminate the stream. Examples include forEach(), collect(), reduce(), and count().
+Lazy Evaluation:
+
+Streams use lazy evaluation, meaning that intermediate operations are only executed when a terminal operation is invoked.
+This allows for efficient processing of large datasets, as only the necessary elements are processed.
+Parallel Processing:
+
+Streams can take advantage of parallel processing to improve performance.
+Parallel streams can be created using the parallel() method.
+Here's a simple example of using the Stream API to filter and print even numbers from a list:
+
+
+import java.util.Arrays;
+import java.util.List;
+
+public class StreamExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        // Using Stream API to filter and print even numbers
+        numbers.stream()
+               .filter(n -> n % 2 == 0)
+               .forEach(System.out::println);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+String str = "abc4006f10";
+
+output =4006, 10, generic to all string
+
+
+
+public String ReturnWholeNumber(String str)
+{
+char strCharArray[] = str.toCharArray();
+
+String output = "";
+
+for(int i=0;i<str.length()-1;i++)
+
+{
+
+if(!(strCharArray[i]>=0 && strCharArray[i]<10)&&(strCharArray[i+1]>=0 && strCharArray[i+1]<10))
+{
+
+output+=String.valueOf(strCharArray[i+1]);
+
+}
+
+if((strCharArray[i]>=0 && strCharArray[i]<10)&&!(strCharArray[i+1]>=0 && strCharArray[i+1]<10))
+{
+
+output+=" ";
+
+}
+
+if((strCharArray[i]>=0 && strCharArray[i]<10)&&(strCharArray[i+1]>=0 && strCharArray[i+1]<10))
+{
+
+output+=String.valueOf(strCharArray[i+1]);
+
+}
+
+if(strCharArray[str.length()-1]>=0 && strCharArray[str.length()-1]>=0)
+{
+
+output+=String.valueOf(strCharArray[str.length()-1]);
+
+}
+
+return output;
+
+}
+
+
+==========================
+
+
+
+
+
+
+
+public class SingletonTest{
+
+private static final instance = null;
+
+@Synchronize(SingletonTest.class)
+public static SingletonTest getInstance(SingletonTest instance)
+{
+
+if(instance ==null)
+{
+instance  = new SingletonTest();
+
+}
+return instance;
+
+}
+
+
+import java.util.Arrays;
+import java.util.List;
+
+public class LazyEvaluationExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        // Using Stream API with lazy evaluation
+        numbers.stream()
+               .filter(n -> {
+                   System.out.println("Filtering: " + n);
+                   return n % 2 == 0;
+               })
+               .map(n -> {
+                   System.out.println("Mapping: " + n);
+                   return n * 2;
+               })
+               .forEach(n -> System.out.println("Result: " + n));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

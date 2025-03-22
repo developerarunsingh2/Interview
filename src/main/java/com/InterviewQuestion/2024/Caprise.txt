@@ -1,0 +1,176 @@
+sort on the basis of names of employee to employee list
+
+List<Employee>employeeList;
+
+List<Employee>sortedList = employeeList.stream().sorted(
+(e1,e2)->
+{
+e2.getName().compareTo(e1.getName())
+
+}).collect().toList();
+
+
+public class Employee{
+
+class Student{
+
+}
+}
+
+
+
+
+
+sort employee name
+
+College
+Id
+
+Student
+studentId
+collegeId
+
+retrieve a college details based on student name
+
+select * from College c
+where id= (select collegeId from Student));
+
+select * from College c
+join Student s
+on s.collegeId = c.studentId
+where s.StudentName = '';
+
+in how many ways we can create inner class?
+difference between singleton and prototype scope?
+
+Q:can we declare class as synchronize?
+Ans:
+In Java, you cannot declare a class itself as synchronized. However, you can use the synchronized 
+
+Q:can we declare a class inside a method?
+Ans:
+No, in Java, you cannot declare a class directly inside a method. Java only allows you to define classes at the top level of a source file, within other classes (as inner or nested classes), or within interfaces or enums.
+
+However, you can define an inner class inside a method if you want to encapsulate functionality within that method's scope. Inner classes can be further divided into four types:
+
+Member Inner Class: Defined at the top level of a class but outside of any method.
+
+Local Inner Class: Defined within a method.
+
+Anonymous Inner Class: A special case of a local inner class where you instantiate the class inline.
+
+Static Nested Class: Similar to a member inner class but declared static.
+
+
+Q:what all web services you have used?
+Ans: Restful and SOAP web services
+
+Q:how to convert sql query to hql query in hibernate?
+Ans:
+Converting a SQL query to an HQL (Hibernate Query Language) query involves translating the SQL syntax into HQL syntax while considering the object-oriented nature of Hibernate. Here's a general guideline on how to do it:
+
+Understand Object Relationships: Hibernate is an Object-Relational Mapping (ORM) framework, so you need to understand the relationships between your Java classes (entities) and how they map to database tables.
+
+Basic HQL Syntax: HQL uses entity names and properties rather than table names and column names. For example, instead of SELECT * FROM User, you would use SELECT u FROM User u.
+
+Translate SQL Functions: HQL supports many SQL functions, but the syntax might differ slightly. For example, COUNT(*) in SQL becomes COUNT(*) in HQL, but UPPER() in SQL becomes UPPER() in HQL.
+
+Joins and Associations: Use entity relationships (mapped using annotations or XML mappings) instead of explicit joins in HQL. For example, if you have a one-to-many relationship between User and Order, you can navigate from User to Order directly in HQL (SELECT u.orders FROM User u) without using explicit join syntax.
+
+Named Parameters: Use named parameters in HQL (:parameterName) instead of positional parameters (?) used in SQL. Named parameters improve readability and maintainability.
+
+Aggregate Functions: Aggregate functions like SUM, AVG, MAX, MIN work similarly in HQL as they do in SQL. However, they operate on object properties rather than database columns.
+
+Subqueries: HQL supports subqueries, but the syntax might differ slightly from SQL. Make sure to understand how to write subqueries in HQL.
+
+Here's an example of converting a simple SQL query to HQL:
+
+SQL Query:
+
+sql
+Copy code
+SELECT u.name, COUNT(o.id) 
+FROM User u 
+JOIN Order o ON u.id = o.user_id 
+GROUP BY u.name;
+Corresponding HQL Query:
+
+hql
+Copy code
+SELECT u.name, COUNT(o.id) 
+FROM User u 
+JOIN u.orders o 
+GROUP BY u.name;
+In this example, User and Order are entities mapped in Hibernate, and orders is a collection property in the User entity representing the one-to-many relationship between User and Order.
+
+
+Q:when we get stackoverflow error? how we can resolve it?
+Ans:
+In Java, a StackOverflowError occurs when the call stack of a thread exceeds its maximum allowed size. This usually happens due to excessive recursion, where a method calls itself or other methods in a chain without proper termination conditions, leading to the stack growing indefinitely.
+
+Here's how you can resolve a StackOverflowError:
+
+Check for Infinite Recursion: Look for recursive methods in your code and ensure that they have proper termination conditions. Make sure that recursive calls eventually reach a base case that stops the recursion.
+
+Increase Stack Size: You can increase the stack size using the -Xss option when launching the JVM. For example, -Xss4m sets the stack size to 4 megabytes. However, increasing the stack size is usually a temporary solution and may not solve the underlying problem of excessive recursion.
+
+Optimize Recursion: If your code relies heavily on recursion, consider optimizing it to use iteration or tail recursion instead. In some cases, converting recursive algorithms to iterative algorithms can improve performance and avoid stack overflow errors.
+
+Check for Unbounded Data Structures: Ensure that your code does not use unbounded data structures (such as unbounded recursion or infinite loops) that can lead to stack overflow errors. Use data structures with bounded sizes or implement proper bounds checks to prevent stack overflow.
+
+Use Tail Call Optimization (TCO): Java does not support tail call optimization by default, but you can manually convert tail-recursive functions into iterative form to avoid stack overflow errors. However, this approach may sacrifice code readability and maintainability.
+
+Profile and Debug: Use debugging tools and profilers to analyze your code's call stack and identify the root cause of the stack overflow error. This can help you pinpoint which method or methods are causing the issue and why.
+
+Review Error Logs: Examine the error logs and stack traces to understand the sequence of method calls leading to the stack overflow error. This can provide valuable insights into the problematic code paths that need to be addressed.
+
+
+
+Q:when we get memoryoutof error? how we can resolve this?
+In Java, an OutOfMemoryError occurs when the Java Virtual Machine (JVM) cannot allocate enough memory for an object because the heap space is exhausted. This error can occur for several reasons, including:
+
+Memory Leaks: If your application holds references to objects longer than necessary, it can lead to a situation where memory is not released, causing the heap space to be exhausted over time.
+
+Large Object Allocations: Creating large objects or arrays that consume a significant portion of the available heap space can lead to an OutOfMemoryError.
+
+Memory-intensive Operations: Performing operations that require a lot of memory, such as loading large datasets into memory or processing large files, can also cause the heap space to be exhausted.
+
+To resolve an OutOfMemoryError, you can take several approaches:
+
+Increase Heap Size: You can increase the maximum heap size (-Xmx option) and/or the initial heap size (-Xms option) of the JVM using command-line parameters. This allows your application to use more memory if needed. However, increasing the heap size is not always a sustainable solution and may only delay the occurrence of the error.
+
+Identify and Fix Memory Leaks: Use profiling tools like VisualVM, YourKit, or Java Mission Control to analyze memory usage and identify potential memory leaks. Make sure that objects are being garbage collected when they are no longer needed and that there are no unnecessary references holding onto objects.
+
+Optimize Memory Usage: Review your code and optimize memory usage where possible. Avoid creating unnecessary objects, use data structures efficiently, and release resources (such as closing streams or connections) when they are no longer needed.
+
+Use Data Structures Wisely: Choose appropriate data structures based on your application's requirements. For example, if you need to store a large amount of data, consider using disk-based or external data structures instead of keeping everything in memory.
+
+Split Large Tasks: If your application performs memory-intensive operations, consider splitting them into smaller tasks or processing data in batches to reduce memory usage.
+
+Use Streaming APIs: When working with large datasets, use streaming APIs (such as Java Streams or Apache Spark) instead of loading the entire dataset into memory at once.
+
+Optimize JVM Parameters: Experiment with different JVM parameters to optimize garbage collection performance and memory usage. For example, you can tune the garbage collector settings (-XX:+UseG1GC, -XX:MaxGCPauseMillis, etc.) to better fit your application's memory requirements.
+
+
+Q:how to create inner class with lambda?
+Ans: 
+public class OuterClass {
+    
+    interface InnerInterface {
+        void innerMethod();
+    }
+
+    public void outerMethod() {
+        InnerInterface inner = () -> System.out.println("Inner method called");
+        inner.innerMethod();
+    }
+
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass();
+        outer.outerMethod();
+    }
+}
+
+
+
+

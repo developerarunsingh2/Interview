@@ -1,0 +1,24 @@
+Nagarro interview:
+
+spring data jpa vs jpa
+springboot in spring
+maven
+
+1.Es6 features
+how to call , one component to other in angular
+
+design pattern to convert monolithic application to microservices
+
+Microservices architecture
+
+synchronized key word
+
+serialization
+
+@Primary annotation in springboot
+
+cloud pcf and aws..
+
+write the program to find the second highest element in 
+an array
+

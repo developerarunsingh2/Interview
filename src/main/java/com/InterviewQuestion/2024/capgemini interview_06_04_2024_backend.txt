@@ -1,0 +1,15 @@
+comparable vs comparator
+hashing in java 8
+splitIterator
+
+getting the sum of salary under a specific deparment and
+a particular manager
+
+dependency injection
+solid design principles
+
+what all design patterns have you used?
+
+What all are the thread safe collections?
+
+is ArrayList<>() threadsafe?

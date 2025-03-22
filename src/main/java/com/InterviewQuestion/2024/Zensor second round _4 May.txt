@@ -1,0 +1,9 @@
+zensor
+
+difference between inner join and outer join
+communication between microservices
+how  to do asynchronous call in microservices
+
+ map of list of Employee  as per department..
+
+hashtable internal implementation

@@ -1,0 +1,54 @@
+1. sort an array 
+2. remove all spaces from string
+
+
+
+1.int arr[] = {2,5,7,1,2};
+
+inbuilt features:
+
+a.Arrays.sort(arr);
+b. Collections.sort(arr);
+c. java 8
+
+d.Arrays.stream(arr).sort(o1,o2-> o1.compareTo(o2)). collect(Collectors.toList());
+d.reverse
+
+arrList.stream().sort(Compartor.comparing(o1,o2-> o1.compareTo(o2));
+
+
+2.string:
+
+String arr[] = actualString.split(" ");
+
+for(String subSting : arr)
+{actualStirng+= subString; }
+
+System.out.println(actualString);
+
+java 8:
+
+String arr[] = actualString.split(" ");
+arrList = arr.toList();
+
+
+5= 5*4*3*2*1 = 120
+
+int factorail = 1;
+for(int i=n;i>0;i--)
+{
+
+factorial = factorial*i;
+}
+
+
+
+
+
+
+
+
+
+
+
+

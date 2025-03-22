@@ -1,0 +1,55 @@
+String str = "Hi Arun How are you";
+
+requirement: reverse each element...
+
+String strArray[] = str.split(" ");
+
+List<String> reversedList = Arrays(strArray).stream().map(n->new StringBuilder(n.reverse())).collector(
+
+
+Iterate 
+
+
+A 
+B
+
+questions:
+
+Java 8:
+can we call directly stream on a particular object?
+springboot:
+how to check a value present in property file?
+ans: with help of creating objects of the properties. and if properties.getProperty()!null it means it exist.
+how to call a specific database ?
+how to create beans in java for database?
+default method A,B and class extends both A,B , then what will happen? will we get any error?
+With streams iteration if we try to modify, do we get any exception?
+How to check if some bean instance is there in application? and create only when if object is not there?
+Ans:
+@SpringBootApplication: This annotation denotes the main class of the Spring Boot application.
+@Configuration: This annotation is used to declare a configuration class.
+@Bean: This annotation declares a method as a bean producer. The method name is used as the bean name unless specified otherwise.
+
+@ConditionalOnMissingBean: This annotation ensures that the bean is created only if there is no other bean of the same type already present in the application context.
+containsBean("yourBeanName"): This method of ApplicationContext checks if a bean with the given name exists in the context.
+when to use it?
+databases:
+how to define the database properties?
+Ans:
+Why services are used in angular?
+
+Microservices:
+Challenges faced in microservices?
+what all design principles you have used
+Front end:
+
+Design for:
+read data from excel-> persist that data in queue.
+
+Security:
+which particular library used to call for jwt token generation?
+
+what is EMR?
+
+Database:
+How to define database?

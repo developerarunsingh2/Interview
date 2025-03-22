@@ -1,0 +1,9 @@
+solution:
+
+Sonata interview:
+nagarro interview:
+
+
+agile methodology:
+
+A sprint retrospective is a review conducted after a sprint that plays a key role in the Agile methodology. A sprint retrospective aims to determine what went well and where you had problems and identify areas where you can improve. Regular reviews are an essential part of team collaboration.

@@ -1,0 +1,73 @@
+1.
+routing the payment in different gateway
+
+on the basis of open close principle
+
+2. Connecting different datasource in springboot practical
+3. ACID properties
+4. what is impure pipes , when to use it
+
+Kafka: default retention of message
+
+annotations used in Kafka for consumer implementation
+
+java 8 question;
+package com.ey;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+
+
+        Map<String, List<String>> maps = new HashMap<String, List<String>>();
+        maps.put("Animals", Arrays.asList("Tiger","Dog","Cat","Deer","Monkey","SPARROW","Tiger","Cat")); // SPARROW
+        maps.put("Fruits", Arrays.asList("apple","mango","banana","chiku")); // all ignore
+        maps.put("Cities", Arrays.asList("Hyderabad","Pune","Mumbai","New York","Goa","Chennai","Pune")); // New York
+
+        // combine
+
+        List<String> animalAndCities = List.of(maps.get("Animals").stream().filter(animal->!animal.equals("SPARROW")).collect(Collectors.toList()
+                )
+                        ,maps.get("Cities")).stream().filter(city->!city.equals("NewYork") && city.toString().length()>3).distinct().collect(Collectors.toList()));
+
+    }
+}
+
+
+---
+
+
+how to define composite key in hibernate
+composite key in hibernate
+Kafka
+retention time of message,
+explain how data is persisted in database?
+
+springboot:
+
+
+springboot:
+
+1.write code for connecting with different database from scratch in springboot
+
+2.
+
+Angular:
+Rx connector 
+
+What are different isolation types in Isolation? which is default is isolation type
+
+how to achieve level2 cache in hibernate?
+
+what is sharding and paartioning and its difference?
+
+
+
+
+

@@ -1,0 +1,126 @@
+program for longest pallindrome
+what does entity manager?
+
+entity manager is responsible for managing the lifecycle
+of JPA entities. facilitaates the transition of entities between various states, such as new, managed, detached and removed.
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class Example {
+    public static void main(String[] args) {
+        // Create an EntityManagerFactory (typically done once for an application)
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence-unit-name");
+
+        // Create an EntityManager
+        EntityManager em = emf.createEntityManager();
+
+        // Start a transaction
+        em.getTransaction().begin();
+
+        // Perform operations with entities
+        MyEntity entity = new MyEntity();
+        entity.setName("Example");
+        em.persist(entity);
+
+        // Commit the transaction
+        em.getTransaction().commit();
+
+        // Close the EntityManager and EntityManagerFactory when done
+        em.close();
+        emf.close();
+    }
+}
+
+
+methods:
+persist
+merge 
+remove 
+find
+
+
+actuators,
+actuators use on memory
+
+how you are handling multithreading in java?
+
+public class MyClass {
+    
+    public static String returnLongestPallindrome(String str)
+    {
+        
+       String max = "";
+       
+       int startIndex = 0;
+       int endIndex = str.length()-1;
+       
+       if(str.length()==0)
+       {
+           return "";
+       }
+       
+        if(str.length()==1)
+       {
+           return str;
+       }
+       
+      //approach 1 
+      // call isPallindrome
+      
+      for(int i=0;i<str.length()-1;i++)
+      {
+          startIndex=i;
+        //   endIndex
+        
+        if(isPallindrome(str,startIndex,endIndex))
+        
+        {
+         //   max = str.subString(startIndex,endIndex);
+        }
+        
+        else
+        {
+            endIndex--;
+        }
+      }
+      
+      
+      
+      
+       
+     return max;  
+       
+        
+    }
+    
+    
+    public static boolean isPallindrome(String str,int startIndex, int endIndex)
+    {
+        //strArray
+        boolean flag = true;
+         while(endIndex>=startIndex)
+       {
+           if(str.indexOf(startIndex++)==str.indexOf(endIndex--))
+           {
+               flag = true;
+           }
+           
+           else
+           {
+               flag = false;
+           }
+       }
+       
+       return flag;
+    }
+    
+    public static void main(String args[]) {
+     String str = "abaxyzzyxf";
+   //  System.out.println(str.subString(3,str.length()-1));
+    System.out.println(isPallindrome(str,3,str.length()-4));
+//                                                                       
+     
+    }
+}

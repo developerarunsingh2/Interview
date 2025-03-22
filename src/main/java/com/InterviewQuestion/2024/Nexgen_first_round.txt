@@ -1,0 +1,86 @@
+1- Find the middle element of linked list without using inbuilt function.
+
+public ListNode middleIndex(ListNode head){
+int nodeCount = 1;
+int middleIndex = 0;
+int iterator = 0;
+
+ListNode  middleNode= null;
+ListNode node = head;
+while(node.next!=null)
+{
+nodeCount++;
+
+}
+
+//if(nodeCount%2==0)
+{
+
+middleIndex = nodeCount/2;
+
+
+}
+
+while(iterator<=middleIndex)
+{
+
+ListNode  middleNode= node.next;
+}
+
+
+return middleNode;
+
+}
+
+2- Find the maximum age of employee in the list of employee using Java 8 features.
+
+List<Employee> employeeList = new ArrayList<>();
+
+//add employees
+
+Integer maxAge = employeeList.stream().sorted(comparingInt(Employee::getAge()).map(n->n.getAge()).reversed().findFirst();
+
+
+3 - Suppose a Student table contained two columns, Name and Marks. How to get names and marks of the top three students based on marks.
+
+Student:
+Name
+Marks
+
+select Name, Marks from Student order by Marks desc limit 3;
+
+
+
+Q:
+leader and follower
+Sqr or iqr in kafka
+consumer
+
+elastic search
+
+which design pattern will be used if you have robot after 5 hours it consumes 20% of energy and again after increasing 5 kg of weight it consumes 10% more. 
+in this case which design pattern you will use?
+
+in singleton design pattern how you will avoid desialization multiple object creation?
+
+what is difference between concurrent hash map and hashtable?
+
+internal working of hashset?
+
+what is cqrs design pattern?
+zuul design pattern?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

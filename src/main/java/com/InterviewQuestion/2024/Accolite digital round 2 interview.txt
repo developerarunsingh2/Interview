@@ -1,0 +1,43 @@
+1.
+Singleton design pattern
+:
+how to make Singleton design pattern,  working for multithreading?
+Ans: my using synchronize on the block level
+
+how to also consider reflection api in singleton design pattern?
+Ans: by throwing the exception, if instance is not null.
+
+Program:
+
+java 8 program:
+
+package com.ey;
+
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class SpecialCharacter {
+    public static void main(String[] args) {
+
+        String input = "ab%%&&   123 ^^-";
+
+        char [] charArray = input.toCharArray();
+                List<Character> inputCharList =  new ArrayList<>();
+       for(char c: charArray)
+       {
+           inputCharList.add(c);
+       }
+
+       Map<Character,Long> countMap = inputCharList.stream().filter(n-> !Character.isDigit(n) && !Character.isLetter(n)
+      ).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+
+       System.out.println(countMap);
+
+
+    }
+}
+
+
+count of special character:
+

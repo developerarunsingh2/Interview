@@ -1,0 +1,14 @@
+volatile
+transient
+
+overriding
+composition,aggregation
+
+anagram program and its complexity
+
+program to check balanced index (sum of elements before it and sum of elements after it in array should be same)
+
+what is low level design
+
+program to find even numbers with java 8
+

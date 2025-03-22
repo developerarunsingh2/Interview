@@ -1,0 +1,54 @@
+
+application1.
+Properties:
+
+pox. dependecny: for rest.
+
+//externalized code: jar
+public class RestTemplate{
+
+@Bean
+//Restrest.
+
+// asynchronous
+ or synchronous methods
+//(url api, Http return,..);
+
+}
+
+
+
+
+
+
+
+application2
+
+
+exception:
+application:
+package excep: custom exception classes: extending runtimeecetpion
+restcontroller: service: validateUserId
+
+List:number:duplate: 
+find duplicate number: position
+
+map<Integer,String>
+
+1
+2
+3
+2
+4
+2
+
+{1,0},{2,{"3 5"},{4,"0"};
+
+// any idea why hash map not mentain the insertion order.
+
+//write boilerplate code for springboot rest template
+// also for fin client
+// advantages of fin client over rest template
+//
+
+

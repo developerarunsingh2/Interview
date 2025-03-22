@@ -1,0 +1,18 @@
+java:
+
+multiple filters in UI , what will be your approach?
+1.you can use custom query criteria..
+2. which part of jwt will check the roles of the user
+3.
+
+Angular:
+how many ways we can communicate between one component to other?
+reactive programming. for different devices , how you can handle it?
+
+session storage and local storage difference?
+
+feedback:
+
+learn about dynamic query creation in backend
+local storage and session storage..
+

@@ -1,0 +1,4 @@
+Capgemini: 
+
+1. java 8 vs java 11 features
+2. 

@@ -1,0 +1,8 @@
+final List<String> abc = Arrays.asList("a","b","c");
+abc.stream().forEach(a -> {
+    abc.add("p");
+});
+System.out.println(abc);
+
+
+

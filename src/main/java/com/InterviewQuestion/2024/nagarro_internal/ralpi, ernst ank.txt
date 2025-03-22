@@ -1,0 +1,47 @@
+ralfi itnerview:
+
+1. Java
+internal working of hashmap
+explain memory model in java?
+what is projection in java?
+Ans:In Java, "projection" typically refers to selecting specific attributes or fields from an object or a collection of objects. This concept is commonly used in data processing and querying, such as in database operations or when manipulating collections of objects in memory.
+
+explain relationship in jvm memory model?
+design pattern used in cloning?Reflection api
+what is serialization, how we can achieve it?
+how serial version id is created , what is logic behind it?
+what are the ways for synchronization?
+
+
+
+2. spring
+scope:
+if a bean is singleton and other bean inside it called
+ which need to be prototye , what need to be done for this.
+
+how autowiring works,
+default scope of bean
+autowiring types
+how to resolve circular dependency of autowiring of beans in springboot
+
+on run time how to inject beans in java?
+
+transactional:
+if more than two calls are happening on same method in different flow then @transacional works in this case?
+
+
+Angular:
+1. what is ngModel
+2. what are directives in angular
+   structural directive? example
+   attribute directives? example
+3. what are services in angular
+4. what are different scenarios in which we should use service?
+5. how to call, one component to other in angular? other than parent child relationship?
+6. what is component directive in angular?
+explain about nglifecycle.
+
+
+javascript:
+how to achieve deep cloning?
+

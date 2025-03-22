@@ -1,0 +1,21 @@
+1. Teradata:
+
+connection: 
+
+
+spark framework:
+
+tables:  
+
+dataframe: mapping: 
+
+hive: s3: 
+
+struct
+
+mqsql datalake: 
+
+
+
+
+

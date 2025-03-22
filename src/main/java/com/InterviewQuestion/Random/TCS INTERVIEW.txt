@@ -1,0 +1,72 @@
+interface A{
+int abc = 40;
+}
+interface A{
+ public class B{
+
+}
+}
+
+
+
+B implements A{
+A.abc = 60;
+
+public static void main()
+{
+
+}}
+
+========================
+
+
+==
+
+5 number of objects in java:
+
+
+
+heap size:
+
+how to make list as read only :
+
+how to convert a map to list in java?
+
+can we declare protected inside interface?
+
+Can we create class inside a interface?
+
+
+USECASE:
+
+interface Inter having one abstract method read;
+
+class A implements Inter
+{
+
+public static void main(String args[])
+{
+System.out.println("hello");
+}
+}
+
+
+will it print hello 
+compile time error
+
+==
+
+what maximum heap size we can give?
+
+give the real time example for encapsulation.
+
+can objects be created without the new keyword?
+
+do you have worked on maven?
+what is first line of code in pom.html?
+
+
+where we declare java version in pom.xml?
+
+
+

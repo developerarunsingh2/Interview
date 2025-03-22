@@ -1,0 +1,29 @@
+interview questions:
+
+explain all cascading in hibernate
+
+which is better @oneToMany or @ManyToOne
+
+when to choose hashmap and treemap
+
+flow of execution in springboot
+
+advance function in stream like bifunctional or binary
+
+what is use of @configuration
+
+entity class annotation
+
+return type of find by methods
+
+does or exist in jpa
+
+which one is strongest for you
+
+what are jpa inbuilt methods.
+
+difference between map, list and set.
+
+which data structure to use when we have to count character in notepad used.
+
+

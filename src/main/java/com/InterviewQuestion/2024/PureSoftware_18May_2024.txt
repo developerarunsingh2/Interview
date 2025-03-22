@@ -1,0 +1,5 @@
+Adapter design pattern
+Strategy design pattern
+BeanFactory vs applicationContext
+Clustered vs non-clustered indexing
+when to use Runnable and when to use Thread

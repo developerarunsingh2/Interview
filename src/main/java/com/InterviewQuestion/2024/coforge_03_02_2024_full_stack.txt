@@ -1,0 +1,45 @@
+
+List of emp.
+
+id, name, salary.
+
+get name of first ten employees sorted in ascending order based on salary, 
+
+having salary greater than 10,000/- asc
+
+List<Employee> employeeList;
+
+=employeeList.stream()
+.filter(n->n.getSalary()>10000)
+.sorted((o1,o2)->o1.getSalary()
+     .compareTo(o2.getSalary())
+.limit(10)
+.map(n->n.getNames()).collect(Collector.toList());
+
+
+
+1.check all functional interfaces with java methods.
+2. microservices distributed architecture, how to maintain distributed data
+3. parent to child data transfer what need to be done
+4. @Qualifier usecase
+5. what @configuration do
+6. check different ways of sorting.
+7. in the distributed system, how to maintain the transaction
+learning:
+map: function functional interface
+filter: predicate functional interface
+sorted: comparator interface
+
+what all design patterns used in java..
+angular:
+
+Feedback:
+5 years: more discussion on microservices architecture
+java 8 improvement..
+angular also,since it is full stack profile.
+
+this is only like today you do not know tomorrow you can use.
+
+
+
+

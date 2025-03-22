@@ -1,0 +1,41 @@
+Transpose of matrix:
+https://www.youtube.com/watch?v=g_Rz94DXvNo
+
+Identity matrix:
+https://www.youtube.com/watch?v=iks8wCfPerU
+
+adjoint of 2x2
+https://www.youtube.com/watch?v=oHzpMgKuI9Q
+
+adjoint of 3x3
+
+https://www.youtube.com/watch?v=Yi5qzNee7dc
+
+multiplication of matrix:
+
+https://www.youtube.com/watch?v=xMNOI8YRQIo
+
+inverse of matrix:
+https://www.youtube.com/watch?v=HYWeEx21WWw&t=69s
+
+inverse of matrix 3X3:
+https://www.youtube.com/watch?v=xfhzwNkMNg4
+
+inverse with elementary row transformation:
+https://www.youtube.com/watch?v=fd_ywV1gsBc
+
+solution of system of linear equations by matrix inversion method. 
+https://www.youtube.com/watch?v=B9Z2e9LSuNw
+
+rank of matrix:
+https://www.youtube.com/watch?v=ly1OBo2vwOY
+https://www.youtube.com/watch?v=EVdNuSxYvLY
+https://www.youtube.com/watch?v=kaphHRq39JI&t=185s(with normal form of matrix)
+
+metrix do not memorize
+
+cayley hamilton ( do after all task is done),not recommended very long
+https://www.youtube.com/watch?v=TNxmupelc-4
+
+
+

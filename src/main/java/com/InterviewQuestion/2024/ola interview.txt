@@ -1,0 +1,10 @@
+ola interview:
+
+coding:
+
+Add two numbers leetcode program:
+
+1.  difference between kafka and rabbit mq
+	architectural difference
+2. how to replicate SQS
+ 

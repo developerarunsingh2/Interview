@@ -1,0 +1,44 @@
+Input: s = "abcabcbb"
+Output: 3;
+
+
+public int findLengthOfSubstring(String s)
+{
+
+if(s.length()==0)
+{
+return 0;
+}
+
+char [] charArray = s.toCharArray();
+
+//String result = "";
+int subStringLength = 0;
+
+Map<Character, Integer> map = new HashMap<>();
+
+for(char c: charArray)
+
+if(!map.containsKey(c))
+{
+
+subStringLength++;
+map.put(c,charArray);
+
+}
+
+else
+{
+break;
+}
+
+}
+
+}
+
+
+abcabcd
+
+a b c
+
+count 0;

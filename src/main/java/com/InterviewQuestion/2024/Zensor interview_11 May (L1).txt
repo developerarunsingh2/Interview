@@ -1,0 +1,32 @@
+duplicate character in string:
+
+List, String ,
+public List<Character> duplicateFind(String str)
+
+{
+
+
+List<Character> duplicateChars = str.toCharArray().stream().(n-> !set.add(n)).collect(Collectors.toList());
+
+
+return duplicateChars ;
+
+
+}
+
+
+scrum calls
+daily
+grooming
+retrospe
+
+
+--
+
+analyze..
+---------------------------------------------------
+
+finding duplicate characters using java 8
+
+
+

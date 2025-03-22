@@ -1,0 +1,88 @@
+merge given 2 arrays and print in sorted order
+    int[] arr1 = {4,5,13,22};
+    int[] arr2 = {0,9,3,7,12,11};
+
+
+Arrays.sort(arr1);
+Arrays.sort(arr2);
+
+int[] arr3 = new int[arr1.length + arr2.length];
+
+int j = 0;
+for(int i=0;i<arr1.length;i++)
+{
+
+if(arr1[i]>arr2[i])
+{
+
+
+arr3[j] = arr2[i];
+j++;
+
+
+}
+
+else
+{
+arr3[j] = arr1[j];
+
+}
+
+
+List<Integer> numbers = Arrays.asList(9, 10, 3, 4, 7, 3, 4);
+
+numbers.stream().map(i->i*i).distinct().collect(Collectors.toList());
+
+api:
+
+client:
+
+getEmployeeIds(1,2,3),
+
+
+
+@RestController
+public class EmployeeController{
+
+@Autowired
+private EmployeeService service;
+
+
+@PostMapping(value = "
+public List<Employee> getEmployees(@RequestBody EmployeeRequest request)
+
+{
+request
+
+select * from Employee e where employeeId  in (
+
+
+
+}
+
+management:
+
+Kafka:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

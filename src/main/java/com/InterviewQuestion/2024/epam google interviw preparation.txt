@@ -1,0 +1,58 @@
+
+
+
+
+
+angular,
+database,
+java,
+springboot
+
+component, pipes,
+i did not work on it,
+
+how technology work,
+
+unit testing
+
+===================================
+router outlet:
+
+@Component({
+selector: 'app-services',
+templateUrl: './services.component.html',
+styleUrls: ['./services.component.css'],
+})
+
+export class implements OnInit{
+showDropDown: boolean = false;
+selectedService: string | undefined;
+
+
+constructor(
+private resourcingService: ResourcingService,
+private softwareDevelopmentService: SoftwareDevelopmentService,
+private router: Router
+){}
+
+ngOnINit(): void{
+this.selectedService = '';
+
+}
+
+
+navigateTo(service: string){
+
+if(service === 'resourcing')
+{
+this.router.navigate(['/resourcing']);
+}
+
+else if( service === 'software-development'){
+this.router.naviage(['/software-development']);
+}
+}
+
+
+
+How to do testing in angular project?

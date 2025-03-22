@@ -1,0 +1,17 @@
+
+employee emplid, depltid, emplname, salary
+department departmentname, department id
+
+Question: find names employee in department finance salary is 20000
+
+select e.employee from employee
+left join department
+on department.id = employee.departmentId
+having e.salary>20000
+
+
+java 8 fibonacci series:
+
+Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1], t[0] + t[1]})
+		.limit(10)
+		.forEach(x -> System.out.println("{" + x[0] + "," + x[1] + "}"));
