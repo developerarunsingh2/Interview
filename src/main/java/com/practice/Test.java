@@ -57,9 +57,5 @@ public class Test {
         System.out.println("Comparable Integer compare values: "+comparable.compareTo(10));
 
         LambdaTest.staticMethod();
-
-
-
-
     }
 }
