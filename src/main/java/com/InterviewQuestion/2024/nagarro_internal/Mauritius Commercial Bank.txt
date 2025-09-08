@@ -123,3 +123,77 @@ Any ↔ Any	Route Parameters
 Any ↔ Any	LocalStorage/SessionStorage
 Any ↔ Any (Global State)	Redux/Ngrx Store
 
+
+Q: reactive programming for different devices and how we can handle it?
+
+Here’s a clear explanation of Reactive Programming and handling different devices (responsive behavior) in that context:
+
+✅ 1️⃣ What is Reactive Programming?
+
+It’s about dealing with asynchronous data streams.
+
+You react to data changes over time (using Observables).
+
+Popular in Angular (RxJS), but the concept applies everywhere.
+
+✅ 2️⃣ Key Concepts
+
+Observable → Stream of data/events.
+
+Observer → Receives data emitted by Observable.
+
+Operators → Transform, filter, combine streams (map, filter, debounceTime…).
+
+Example: of(1,2,3).pipe(map(x => x * 2)).subscribe(console.log);
+
+✅ 3️⃣ Problem: Handling Different Devices (Responsive Design)
+
+In the context of Reactive Programming, how can we detect screen size changes and respond?
+
+Approach: Use a Responsive Observable Stream
+✅ Example in Angular (RxJS)
+import { Injectable } from '@angular/core';
+import { fromEvent, map, startWith, Observable } from 'rxjs';
+
+@Injectable({ providedIn: 'root' })
+export class ResponsiveService {
+  
+  screenSize$: Observable<string>;
+
+  constructor() {
+    this.screenSize$ = fromEvent(window, 'resize').pipe(
+      map(() => this.getScreenSize()),
+      startWith(this.getScreenSize()) // Initial value
+    );
+  }
+
+  private getScreenSize(): string {
+    const width = window.innerWidth;
+    if (width < 600) return 'mobile';
+    else if (width < 960) return 'tablet';
+    else return 'desktop';
+  }
+}
+
+✅ Component Example Usage
+@Component({...})
+export class MyComponent implements OnInit {
+  currentDevice: string;
+
+  constructor(private responsiveService: ResponsiveService) {}
+
+  ngOnInit() {
+    this.responsiveService.screenSize$.subscribe(size => {
+      this.currentDevice = size;
+      console.log('Current device:', size);
+    });
+  }
+}
+
+✅ Why Is This Reactive?
+
+The stream (screenSize$) emits a new value every time the window resizes.
+
+Components “react” automatically without manually checking window.innerWidth.
+
+Allows declarative and clean responsive design behavior.
