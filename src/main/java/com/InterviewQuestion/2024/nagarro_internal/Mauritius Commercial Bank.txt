@@ -16,3 +16,110 @@ feedback:
 learn about dynamic query creation in backend
 local storage and session storage..
 
+Answers:
+Q1: how many ways we can communicate between one component to other:
+
+In Angular, there are multiple ways to communicate between components, depending on their relationship (parent-child, siblings, unrelated). Here’s a clean and categorized list:
+
+✅ 1️⃣ Parent to Child Communication
+
+🔧 Use @Input()
+
+// child.component.ts
+@Input() message: string;
+
+<!-- parent.component.html -->
+<app-child [message]="'Hello from parent'"></app-child>
+
+✅ 2️⃣ Child to Parent Communication
+
+🔧 Use @Output() with EventEmitter
+
+// child.component.ts
+@Output() notify = new EventEmitter<string>();
+
+someMethod() {
+    this.notify.emit('Message from child');
+}
+
+<!-- parent.component.html -->
+<app-child (notify)="onNotify($event)"></app-child>
+
+// parent.component.ts
+onNotify(message: string) {
+    console.log(message);
+}
+
+✅ 3️⃣ Between Sibling Components
+
+🔧 Use a Shared Service with RxJS Subject/BehaviorSubject
+
+// shared.service.ts
+@Injectable({ providedIn: 'root' })
+export class SharedService {
+    private messageSource = new BehaviorSubject<string>('Default message');
+    currentMessage = this.messageSource.asObservable();
+
+    changeMessage(message: string) {
+        this.messageSource.next(message);
+    }
+}
+
+// sibling-a.component.ts
+constructor(private sharedService: SharedService) { }
+
+sendMessage() {
+    this.sharedService.changeMessage('Hello from Sibling A');
+}
+
+// sibling-b.component.ts
+constructor(private sharedService: SharedService) {
+    this.sharedService.currentMessage.subscribe(msg => {
+        console.log('Message received:', msg);
+    });
+}
+
+✅ 4️⃣ Using a Template Reference Variable (ViewChild)
+
+Useful when Parent wants to directly call a Child component method.
+
+<!-- parent.component.html -->
+<app-child #childComp></app-child>
+<button (click)="childComp.childMethod()">Call Child Method</button>
+
+✅ 5️⃣ Using Router (Passing Data via Route Parameters)
+// Navigate with parameters
+this.router.navigate(['/detail', userId]);
+
+// Retrieve in target component
+this.route.paramMap.subscribe(params => {
+    const id = params.get('id');
+});
+
+✅ 6️⃣ Using LocalStorage/SessionStorage
+
+Store data in localStorage or sessionStorage.
+
+Retrieve in another component.
+
+📝 Not recommended for transient data but useful for data persistence.
+
+✅ 7️⃣ Using Redux/Ngrx Store (Advanced State Management)
+
+Centralized state management pattern.
+
+Use store to dispatch actions and select state.
+
+this.store.dispatch(setMessage({ message: 'Hello from Component A' }));
+this.store.select(selectMessage).subscribe(msg => ...);
+
+✅ Summary
+Communication Type	Mechanism
+Parent → Child	@Input()
+Child → Parent	@Output() + EventEmitter
+Sibling ↔ Sibling	Shared Service (RxJS Subject)
+Parent → Child (direct)	@ViewChild
+Any ↔ Any	Route Parameters
+Any ↔ Any	LocalStorage/SessionStorage
+Any ↔ Any (Global State)	Redux/Ngrx Store
+
