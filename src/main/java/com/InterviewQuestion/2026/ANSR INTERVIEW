@@ -1,0 +1,25 @@
+What is executor service and what methods you have used of it
+
+By using java 8 and lambda solve below problem
+given list of strings.
+
+System design for hotel booking systems. How you will handle fault tolerance, load balancing, api design.and so on
+
+If there is slowness in some api call, what will be your approach to resolve this.
+
+CI/CD deployment process followed in your project
+
+how you will secure S3
+
+what is IAM and in cases you have used it.
+
+In VPC how you will do networking for a particular instance
+
+what are design patterns
+
+WHAT are SOLID principles
+
+design hotel management system using SPRING boot, reservation , availability and take care of dates
+
+how you will deploy a application in zero down time
+

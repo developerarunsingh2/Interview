@@ -12,7 +12,7 @@ public class CollectorsAndReduction {
         * */
         List<String> fruitsList = List.of("Apple","banana", "Cherry","Apricot","Blueberry");
         String str = fruitsList.stream().collect(Collectors.joining(","));
-        System.out.println(str);
+        System.out.println("comma separated: "+str);
 
         /*
         * Group elements by a property using Collectors.groupingBy()
@@ -25,7 +25,7 @@ public class CollectorsAndReduction {
         System.out.println(grouped);
 
         /*
-        * Partition elements into two groups based on a predicate using Collectors.partitionBy()
+        * Partition elements into two groups based on a predicate using Collectors.partitioningBy()
         * */
 
         Predicate<String> isOdd = fruits->fruits.length()%2==0;
@@ -61,6 +61,8 @@ public class CollectorsAndReduction {
         List<Integer> integers =  Arrays.asList(1,2,3,4,5,6);
         int sum = integers.stream().collect(Collectors.summingInt(Integer::intValue));
         System.out.println("Sum of numbers: "+sum);
+
+
 
     }
 }
