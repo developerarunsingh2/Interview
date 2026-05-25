@@ -1,0 +1,75 @@
+
+FrontEnd:
+how to send data from one component to other in Angular
+How to resolve delay in dashboard loading
+what are interceptors
+what are signals
+dependency injection in angular
+how to update versions in angular
+what versions are you are using in your project
+Rx/js in angular
+cqrs in angular
+
+Backend:
+java 8 enhancement for hashmap and concurrent hashmap( in detail discussion)
+segment concept in hashmap was before java 8 check what came after java 8
+At what index blocking happen for write operation how it is decided
+LinkedList and size increment  after 8 in red black tree ()
+what is metaspace
+implement singleton design pattern( programs pasted), Constructor reflection attack and how to prevent it,
+(with throuwing exception), another way to breaking it for example cloing,
+by printing the hashcode checking same object get created in singleton and breaking with reflection
+
+program:
+
+import java.util.*;
+import java.io.*;
+import java.lang.reflect.Constructor;
+//Singleton class:
+
+ class  Singleton{
+
+  private Singleton(){
+    throw new RuntimeException("Objects can not be created");
+  }
+
+  private static  Singleton INSTANCE;
+
+  public static Singleton getInstance(){
+    if(INSTANCE == null)
+    {
+      INSTANCE = new Singleton();
+    }
+
+    return INSTANCE;
+  }
+}
+public class Main {
+    public static void main(String[] args) throws Exception {
+      System.out.println("Hello, World!");
+
+      // Singleton Singleton1 = Singleton.getInstance();
+      // Singleton Singleton2 = Singleton.getInstance();
+
+        Singleton s1 = Singleton.getInstance();
+
+        Constructor<Singleton> constructor =
+                Singleton.class.getDeclaredConstructor();
+
+        constructor.setAccessible(true);
+
+        Singleton s2 = constructor.newInstance();
+
+        System.out.println(s1.hashCode());
+        System.out.println(s2.hashCode());
+
+      // System.out.println(Singleton1.hashCode());
+      // System.out.println(Singleton2.hashCode());
+
+    }
+}
+
+
+how a springboot application start
+WHAT ARE INDEXES, its design (what happens in background)
+why not apply indexes on all fields
