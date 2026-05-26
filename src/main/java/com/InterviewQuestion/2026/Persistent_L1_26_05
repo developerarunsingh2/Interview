@@ -1,0 +1,169 @@
+when you will get stackOutOfBoundsException in java?
+when you will get stackOverflowException in java?
+In how many ways java object can be created?
+
+Output of the below program:
+Isolation levels
+Propogation levels
+
+For a ecommerce application if there is only 1 phone and at the same time
+and there are multiple customer for same phone and ordered at same time, how you will make sure
+this transaction is successful for only 1 customer and other customers will get a message that phone is out of stock.
+Ans: lock the resource (phone) when a customer is trying to purchase it. This can be achieved using synchronization or by using a database transaction with appropriate isolation levels. When a customer initiates the purchase, acquire a lock on the phone resource. If another customer tries to purchase the same phone while it is locked, they will receive a message that the phone is out of stock. Once the first customer's transaction is completed and the lock is released, other customers can attempt to purchase the phone again.
+locking on table column level.
+
+
+class Demo{
+
+
+  public void method1(Object o){
+
+    System.out.println("printing Object");
+
+  }
+
+
+  public void method1(String str){
+
+    System.out.println("printing String");
+
+  }
+
+
+  public void method1(Employee emp){
+
+    System.out.println("printing Employee");
+
+  }
+
+
+  public static void main(String a[]){
+
+    Demo ol = new Demo();
+
+    ol.method1(null);
+
+  }
+
+
+}
+
+
+booking cab:
+
+cab;
+driver;
+customer;
+
+search:
+/cab/{1}/ availablility
+
+{
+dates:
+}
+
+putcall:
+cab/book/{customerId}/
+customer details
+
+post:
+/payment/c1/cab1/ :
+
+
+event trigger
+
+shopping cart: mobile booking ( one mobile quantity):
+outbox design pattern: Debezium:
+
+
+public class Demo{
+
+  public static void main(String[] arr){
+
+    Integer num1 = 100;
+
+    Integer num2 = 100;
+
+    Integer num3 = 500;
+
+    Integer num4 = 500;
+
+
+    if(num1==num2){
+
+      System.out.println("num1 == num2");
+
+    }
+
+    else{
+
+      System.out.println("num1 != num2");
+
+    }
+
+    if(num3 == num4){
+
+      System.out.println("num3 == num4");
+
+    }
+
+    else{
+
+      System.out.println("num3 != num4");
+
+    }
+
+  }
+
+}
+
+
+
+====
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+public class Test {
+
+public static void main(String []a){
+final Set<Object> s = new HashSet<>();
+//do something
+s.add("a");
+s.add("b");
+
+System.out.println(s.size());//expected output: 2
+final Iterator<Object> iter = s.iterator();
+final Object o1 = iter.next();
+final Object o2 = iter.next();
+
+hashCode
+
+System.out.println(o1.equals(o2));//expected output : true
+}
+}
+
+
+input: i ma a avaj repoleved
+
+  output: i am a java developer
+
+String[] inputWords = input.split("//");
+
+String output = "";
+
+for(String s: inputWords)
+{
+
+output = output + new StringBuilder(s).reverse();
+
+}
+
+sout(output);
+
+
+
+
+
+
+
