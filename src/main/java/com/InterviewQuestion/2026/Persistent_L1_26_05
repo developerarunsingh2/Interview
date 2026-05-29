@@ -16,34 +16,34 @@ locking on table column level.
 class Demo{
 
 
-  public void method1(Object o){
+public void method1(Object o){
 
-    System.out.println("printing Object");
+System.out.println("printing Object");
 
-  }
-
-
-  public void method1(String str){
-
-    System.out.println("printing String");
-
-  }
+}
 
 
-  public void method1(Employee emp){
+public void method1(String str){
 
-    System.out.println("printing Employee");
+System.out.println("printing String");
 
-  }
+}
 
 
-  public static void main(String a[]){
+public void method1(Employee emp){
 
-    Demo ol = new Demo();
+System.out.println("printing Employee");
 
-    ol.method1(null);
+}
 
-  }
+
+public static void main(String a[]){
+
+Demo ol = new Demo();
+
+ol.method1(null);
+
+}
 
 
 }
@@ -78,42 +78,42 @@ outbox design pattern: Debezium:
 
 public class Demo{
 
-  public static void main(String[] arr){
+public static void main(String[] arr){
 
-    Integer num1 = 100;
+Integer num1 = 100;
 
-    Integer num2 = 100;
+Integer num2 = 100;
 
-    Integer num3 = 500;
+Integer num3 = 500;
 
-    Integer num4 = 500;
+Integer num4 = 500;
 
 
-    if(num1==num2){
+if(num1==num2){
 
-      System.out.println("num1 == num2");
+System.out.println("num1 == num2");
 
-    }
+}
 
-    else{
+else{
 
-      System.out.println("num1 != num2");
+System.out.println("num1 != num2");
 
-    }
+}
 
-    if(num3 == num4){
+if(num3 == num4){
 
-      System.out.println("num3 == num4");
+System.out.println("num3 == num4");
 
-    }
+}
 
-    else{
+else{
 
-      System.out.println("num3 != num4");
+System.out.println("num3 != num4");
 
-    }
+}
 
-  }
+}
 
 }
 
@@ -146,7 +146,7 @@ System.out.println(o1.equals(o2));//expected output : true
 
 input: i ma a avaj repoleved
 
-  output: i am a java developer
+output: i am a java developer
 
 String[] inputWords = input.split("//");
 
@@ -161,6 +161,7 @@ output = output + new StringBuilder(s).reverse();
 
 sout(output);
 
+What are signals?
 
 
 
