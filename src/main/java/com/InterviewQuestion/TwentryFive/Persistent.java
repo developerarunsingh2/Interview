@@ -2,31 +2,30 @@ package com.InterviewQuestion.TwentryFive;
 
 public class Persistent {
 
+    private static boolean isPowerOf2(int input)
+    {
+        if(input ==1)
+        {
+            return true;
+        }
+        while(input>1)
+
+        {
+            if(input%2==0) {
+                input = input / 2;
+            }
+
+            else{
+               return false;
+            }
+        }
+
+        return  true;
+    }
     public static void main(String args[]){
 
-        int input = 102;
+        int input = 22;
 
-        while(input>2)
-
-        {
-            input = input/2;
-        }
-
-        if(input==0)
-
-        {
-            System.out.println("input is power of 2");
-        }
-
-
-        if(input==1)
-
-        {
-            System.out.println("its not power of 2");
-        }
+        System.out.println(isPowerOf2(input));
     }
-
-//
-
-
 }
