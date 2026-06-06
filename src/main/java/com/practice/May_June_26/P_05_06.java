@@ -90,7 +90,7 @@ map.entrySet().stream().filter(m->m.getValue()==2).findFirst()
 
         //comparing by values
 
-        mapEntrySet.stream().sorted(Map.Entry.comparingByKey()).collect();
+      //  mapEntrySet.stream().sorted(Map.Entry.comparingByKey()).collect();
 
 
 
