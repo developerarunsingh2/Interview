@@ -1,0 +1,12 @@
+1. microservices versioning
+2.coding: removing duplicates in list, max occrance up to 2 allowed
+3. sql: employee, department, salary,
+group employees by salary having <70K, 70 K to 80 K, and greater than 80 K
+
+4.what design patterns u have used in logging, caching and security
+5. what is flietweight design pattern, how it helps in memory management
+6. project understanding
+7. in distributed application what you have used for logging
+8. what is refactoring and where you have used it
+9.  how inheritance you have used in Jpa
+10. how you have used security in your application
