@@ -10,3 +10,4 @@ group employees by salary having <70K, 70 K to 80 K, and greater than 80 K
 8. what is refactoring and where you have used it
 9.  how inheritance you have used in Jpa
 10. how you have used security in your application
+11. explain the java memory model
