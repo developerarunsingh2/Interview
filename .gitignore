@@ -1,0 +1,6 @@
+# Maven build target
+target/
+
+# Keep the wrapper tool, but ignore its local HTTP build caches
+.mvn/wrapper/maven-wrapper.jar
+!/.mvn/wrapper/maven-wrapper.properties
