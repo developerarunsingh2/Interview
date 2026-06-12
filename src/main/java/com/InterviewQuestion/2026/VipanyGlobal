@@ -1,0 +1,31 @@
+
+        //Employee: name, id, salary, department
+        // top 5 highest salalied employee table?
+
+      List<Long> top5Salary =   emplList.stream().sorted(Employee::getSalary()).reversed().map(e->e.getSalary())
+                .limit(5);
+        //HR department, salary
+
+        how you will get highest salary in each department?
+        //first non repeated in string without streams()
+
+
+
+        jvm: what is  bulk head design pattern?
+             how you will create virtual threads?
+             how it is different from Threads and why earlier it was not possible?
+
+             how do you do rebalancing in Kafka?
+                what is DLQ?
+                what is CQRS?
+                Q: HAVE YOU USED STREAMS IN KAFKA?
+                WHAT IS DLQ?
+                what is difference between constructor level and field level injection?
+                @Qualifier vs @Service()?
+                @Primary?
+                Which garbage collector You are using? and why
+                how you monitor or debug memory out of error?
+                RPC vs Rest
+                how your micro services communicates?
+                have you worked on designing system end to end?
+
