@@ -1,0 +1,37 @@
+how to write custom actuators
+which type of communication are there in microservices
+what is dependency injection
+how to handle circular dependency
+
+@Transactional internal working
+difference between kafka and rabbit mq
+
+java program to shift 0s in last in array
+
+sql: query to count the number of employees in each department
+find the duplicate numbers in int list
+
+@Lazy in circular dependency
+proxy in transactional
+
+what is difference between path variable and request param?
+Ans:
+@PathVariable: Extracts values directly embedded into the URI path itself.
+Example URL: /users/45Spring Syntax: @GetMapping("/users/{id}")
+@RequestParam: Extracts values from the query string appended after a question mark (?).
+Example URL: /users?id=45Spring Syntax: @GetMapping("/users")
+
+ // Using @PathVariable to find a specific user by ID
+    @GetMapping("/users/{userId}")
+    public ResponseEntity<User> getUserById(@PathVariable("userId") Long id) {
+        return ResponseEntity.ok(userService.findById(id));
+    }
+
+    // Using @RequestParam to filter users by their role
+    @GetMapping("/users")
+    public ResponseEntity<List<User>> filterUsersByRole(
+            @RequestParam(name = "role", required = false, defaultValue = "USER") String role) {
+        return ResponseEntity.ok(userService.findByRole(role));
+    }
+
+

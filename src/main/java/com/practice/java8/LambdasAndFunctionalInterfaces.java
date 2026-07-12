@@ -93,7 +93,7 @@ public class LambdasAndFunctionalInterfaces {
         * */
 
         List<String> stringList = List.of("helo", "radhe","ram","siya");
-        Consumer<List<String>> consumer = x-> System.out.println(x);
+        Consumer<List<String>> consumer = System.out::println;
         consumer.accept(stringList);
 
         /*Implement BiFunction to concatenate two strings with a separator */

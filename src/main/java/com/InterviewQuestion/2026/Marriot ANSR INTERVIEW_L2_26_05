@@ -1,0 +1,49 @@
+Output of below programs:
+Integer i = 30;
+
+Integer j = 30;
+updateValue(Integer i){
+    i = i+1;
+}
+
+what will be value of i: will it update or not.
+
+Ans: as per interview answer will be 30. since this is pass by value and we are passing the reference of i to the method, but inside the method we are changing the reference to point to a new object (i+1), so the original reference outside the method still points to the original object with value 30. Therefore, the value of i will not be updated and will remain 30.
+
+What will be the output of below program:
+class A{
+static List<Integer> list = new ArrayList<>(List.of(1, 2, 3, 4, 5));
+
+static List<Integer> getList(){
+    return list;
+}
+class B{
+    public void addToList(int value){
+        list.add(value);
+    }
+}public class Main {
+    public static void main(String[] args) {
+        B b1 = new B();
+        b1.addToList(10);
+
+       System.out.println(A.getList()).size();
+        System.out.println(list);
+list1 = new ArrayList<>(List.of(1, 2, 3, 4, 5));
+
+what will be size of list will it be  in class B and class A
+diff bw linkedList and Array List
+implementation of LinkedList
+what is atomic variable,
+how size of thread pool used in multithreading is finalized
+rank vs denserank
+hashmap vs linkedhashmap
+
+Implementation of LinkedList:
+
+how to do masking of credit card number in java. may be on controller layer or before use so that it is not exposed in logs or anywhere else.
+even in logs. or even it is secure from developer.
+
+What is T in Generics. What is significnce of ? in generics. why we use generics.
+T in Generics is a type parameter that represents a generic type. It allows you to create classes, interfaces, and methods that can operate on any type of data. The significance of ? in generics is that it represents an unknown type. It is used when you want to specify that a method can accept any type of argument, but you don't care about the specific type. We use generics to provide type safety at compile time, to eliminate the need for casting, and to enable code reusability by allowing the same code to work with different types of data.
+what is optimistic locking and pessimistic locking in java?
+Optimistic locking and pessimistic locking are two concurrency control mechanisms used in Java to manage access to shared resources in a multi-threaded environment.

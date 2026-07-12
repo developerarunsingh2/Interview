@@ -1,0 +1,128 @@
+# Interview Questions
+
+## Java Streams & Collections
+
+Given an Employee object with the following fields:
+
+```java
+Employee {
+    Long id;
+    String name;
+    Double salary;
+    String department;
+}
+```
+
+### 1. Top 5 Highest Salaried Employees
+
+* How will you find the top 5 highest salaried employees using Java Streams?
+* How will you return the complete Employee objects instead of just salaries?
+
+### 2. Highest Salary in Each Department
+
+* How will you find the employee with the highest salary in each department?
+* How will you return a Map<Department, Employee>?
+
+### 3. First Non-Repeated Character
+
+* Find the first non-repeated character in a String without using Streams.
+* What would be the time and space complexity?
+
+---
+
+## JVM & Java Concurrency
+
+### 4. Bulkhead Design Pattern
+
+* What is the Bulkhead Design Pattern?
+* How does it help in Microservices architecture?
+
+### 5. Virtual Threads
+
+* How do you create Virtual Threads in Java?
+* How are Virtual Threads different from Platform Threads?
+* Why was this not possible before Project Loom?
+
+---
+
+## Kafka
+
+### 6. Kafka Rebalancing
+
+* What is Kafka Rebalancing?
+* When does Rebalancing happen?
+* What are its impacts?
+
+### 7. Dead Letter Queue (DLQ)
+
+* What is a Dead Letter Queue?
+* When should messages be sent to a DLQ?
+
+### 8. Kafka Streams
+
+* Have you worked with Kafka Streams?
+* What problems does Kafka Streams solve?
+* Kafka Streams vs Kafka Consumers?
+
+---
+
+## System Design & Architecture
+
+### 9. CQRS
+
+* What is CQRS (Command Query Responsibility Segregation)?
+* When would you use it?
+
+### 10. RPC vs REST
+
+* What is the difference between RPC and REST?
+* When would you prefer one over the other?
+
+### 11. Microservice Communication
+
+* How do your microservices communicate?
+* Synchronous vs Asynchronous communication?
+* REST vs Kafka/Event-Driven communication?
+* what is difference between synchronize and reentrant lock?
+
+### 12. End-to-End System Design
+
+* Have you designed a system end-to-end?
+* Explain the architecture, scalability, resilience, and deployment strategy.
+
+---
+
+## Spring Framework
+
+### 13. Constructor Injection vs Field Injection
+
+* What is the difference between Constructor Injection and Field Injection?
+* Which one do you prefer and why?
+
+### 14. @Qualifier vs @Primary
+
+* What is @Qualifier?
+* What is @Primary?
+* When would you use each?
+
+### 15. @Service Annotation
+
+* What is the purpose of @Service?
+* How is it different from @Qualifier and @Primary?
+
+---
+
+## JVM & Performance
+
+### 16. Garbage Collection
+
+* Which Garbage Collector are you using?
+* Why did you choose it?
+* G1 GC vs ZGC vs Parallel GC?
+
+### 17. OutOfMemoryError Debugging
+
+* How do you investigate a Memory OutOfMemoryError?
+* Which tools have you used (Heap Dump, VisualVM, JProfiler, MAT, etc.)?
+* How do you identify memory leaks?
+

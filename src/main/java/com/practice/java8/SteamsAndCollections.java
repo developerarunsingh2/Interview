@@ -97,7 +97,7 @@ public class SteamsAndCollections {
          * */
         String str = "Arun Kumar Singh My name is Arun Kumar Singh";
         Map<String, Long> countingMap = Arrays.stream(str.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        System.out.println(countingMap);
+        System.out.println("counting words: "+countingMap);
 
         /*Q7: Sort a list of objects by multiple fields*/
         System.out.println("before sorting: " + employeeList);
@@ -142,6 +142,6 @@ public class SteamsAndCollections {
                 .boxed()
                 .collect(Collectors.toMap(names::get, ages::get));
 
-        System.out.println("merged map: "+mergedMap);
+        System.out.println("merged lists : "+mergedMap);
     }
 }
