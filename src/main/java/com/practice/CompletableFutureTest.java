@@ -21,7 +21,7 @@ public class CompletableFutureTest {
          employeeCompletableFuture.supplyAsync(s)
                  .thenApply((e)-> e.getSalary()*2)
                  .thenAccept(result-> System.out.println(
-                 "Salary of Arun is " + result + System.nanoTime()))
+                 " Salary of Arun is " + result + System.nanoTime()))
                  .thenCompose(
                          n->{
                              System.out.println(s.get());

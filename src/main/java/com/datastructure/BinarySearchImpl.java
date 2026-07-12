@@ -31,14 +31,12 @@ public class BinarySearchImpl {
         return -1;
     }
     public static void main(String[] args) {
-        int arr[] = {3,2,1,10,9,12};
+        int arr[] = {3, 2, 1, 10, 9, 12};
         int target = 10;
         //output 2
         Arrays.sort(arr);
         //O(nlogn)
         Arrays.stream(arr).forEach(System.out::println);
-      //  System.out.println(arr.s);
-        System.out.println(binarySearching(arr,target));
-
-    }
-}
+        //  System.out.println(arr.s);
+        System.out.println(binarySearching(arr, target));
+    }}
